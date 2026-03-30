@@ -1,0 +1,14 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "colorstable",
+    "scada",
+    "scadavis",
+    "websage"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist"
+  ]
+}

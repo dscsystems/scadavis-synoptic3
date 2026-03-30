@@ -1,0 +1,237 @@
+/*
+ * SCADAvis.io Synoptic API © 2018-2022 Ricardo L. Olsen / DSC Systems ALL RIGHTS RESERVED.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Loader animation - From https://projects.lukehaas.me/css-loaders/ */
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* User selection prevention */
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+/* Container styles */
+.scada-vis-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #dddddd;
+  margin: 0;
+}
+
+/* Toolbar styles */
+.bardiv {
+  position: absolute;
+  opacity: 0.3;
+  float: left;
+  white-space: nowrap;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 40px;
+  overflow: hidden;
+  color: white;
+  font-family: tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.bardiv form {
+  margin-top: 4px;
+}
+
+.bardiv img {
+  cursor: pointer;
+}
+
+/* SVG container */
+.svgdiv {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* Loader container */
+.loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.loader-brand {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-family: Verdana, Geneva, sans-serif;
+  color: gray;
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* Watermark */
+.watermark {
+  position: absolute;
+  opacity: 0.5;
+  right: 3px;
+  bottom: 3px;
+  text-align: right;
+  font-family: Verdana, Geneva, sans-serif;
+  color: gray;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Alarm box */
+.almbox {
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.time-display {
+  display: none;
+  text-align: right;
+}
+
+.time-display span {
+  margin-right: 5px;
+  font-family: tahoma, courier, monospace;
+  font-size: 9pt;
+  color: white;
+}
+
+.status-display {
+  text-align: right;
+}
+
+.status-display span {
+  font-family: tahoma, courier, monospace;
+  font-size: 10pt;
+  font-weight: bold;
+  color: white;
+}
+
+/* Time machine controls */
+.timemachinecontrols {
+  display: none;
+  width: 100%;
+  line-height: 40px;
+  position: absolute;
+  left: 10px;
+  top: -1px;
+  z-index: 2;
+}
+
+.timemachinecontrols input[type='range'] {
+  width: calc(99% - 520px);
+  min-width: 50px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.timemachinecontrols input[type='date'],
+.timemachinecontrols input[type='time'] {
+  position: relative;
+  vertical-align: middle;
+}
+
+/* Preview div */
+.previewdiv {
+  display: none;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 3;
+  opacity: 0.95;
+  box-shadow: 2px 2px 2px #888888;
+}
+
+/* Vega charts container */
+.vega-charts {
+  display: none;
+}
+
+/* Hidden inputs */
+.hidden-input {
+  display: none;
+}
+
+/* Image map styling */
+map area {
+  cursor: pointer;
+}
