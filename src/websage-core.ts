@@ -2737,7 +2737,7 @@ export function createWebSAGEEngine (options: WebSAGEOptions): WebSAGEEngine {
           )) != ''
       if (state.g_isInkscape) {
         state.Color_BackgroundSVG = state.ScreenViewer_Background
-        const sodipodibase = state.SVGDoc.getElementById('base')
+        const sodipodibase = state.SVGDoc.getElementById('base') ?? state.SVGDoc.getElementsByTagName("sodipodi:namedview")[0]
         if (sodipodibase) {
           state.Color_BackgroundSVG = sodipodibase.attributes.pagecolor.value
         }
