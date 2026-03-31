@@ -1478,6 +1478,7 @@ function createVegaCharts(e) {
 	}
 	function W(e, n) {
 		let r = l?.d3 || window.d3;
+		if (n._d3arc) return;
 		if (!r) {
 			console.error("D3 library not available for arc chart");
 			return;

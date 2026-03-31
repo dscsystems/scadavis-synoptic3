@@ -1,7 +1,7 @@
 'use strict'
 
 /*
- * SCADAvis.io Synoptic API © 2018-2022 Ricardo L. Olsen / DSC Systems ALL RIGHTS RESERVED.
+ * SCADAvis.io Synoptic API © 2018-2026 Ricardo L. Olsen / DSC Systems ALL RIGHTS RESERVED.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -517,7 +517,10 @@ export function createVegaCharts(options: VegaChartsOptions): VegaChartsEngine {
     // Get d3 from externalLibs dynamically (may not be available at factory creation time)
     const d3 = externalLibs?.d3 || (window as any).d3
     
-    // console.log('initializeArc called with:', { label, item, d3: !!d3 })
+    // Skip if already initialized - prevents scale(0,0) bug when re-initializing hidden elements
+    if (item._d3arc) {
+      return
+    }
     
     if (!d3) {
       console.error('D3 library not available for arc chart')
@@ -589,7 +592,6 @@ export function createVegaCharts(options: VegaChartsOptions): VegaChartsEngine {
 
     // Hide the rectangle
     item.style.display = 'none'
-    // console.log('initializeArc: Arc initialized successfully')
   }
 
   /**
@@ -866,20 +868,16 @@ export function createVegaCharts(options: VegaChartsOptions): VegaChartsEngine {
 
     const parent = inkSageItem.parent as ChartElement | undefined
     if (!parent) {
-      // console.warn('executeArc: No parent element')
       return
     }
 
     if (!parent._d3arc) {
-      // console.warn('executeArc: Arc not initialized, _d3arc missing on parent')
       return
     }
 
     const vt = valueResolveCoded(parent._d3arc_tag, parent)
     const proporcao =
       (Number(vt) - parent._d3arc_min) / (parent._d3arc_max - parent._d3arc_min)
-
-    // console.log('executeArc: value=', vt, 'proportion=', proporcao)
 
     const arc = d3
       .arc()
