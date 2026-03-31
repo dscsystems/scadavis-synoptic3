@@ -951,8 +951,8 @@ function createWebSAGEEngine(options) {
 			let n = state.SVGDoc.viewBox;
 			if (n && n.baseVal && (state.g_originalViewBox = n.baseVal.valueAsString), state.g_isInkscape = (state.SVGDoc.getAttributeNS(null, "inkscape:version") || state.SVGDoc.getAttributeNS("http://www.inkscape.org/namespaces/inkscape", "version")) != "", state.g_isInkscape) {
 				state.Color_BackgroundSVG = state.ScreenViewer_Background;
-				let e = state.SVGDoc.getElementById("base") ?? state.SVGDoc.getElementsByTagName("sodipodi:namedview")[0];
-				e && (state.Color_BackgroundSVG = e.attributes.pagecolor.value);
+				let e = state.SVGDoc.getElementsByTagName("sodipodi:namedview")[0];
+				"attributes" in e && (state.Color_BackgroundSVG = e.attributes?.pagecolor?.value ?? e.attributes["inkscape:deskcolor"]?.value);
 			}
 			state.SVGDoc != null && setBgColor(state.Color_BackgroundSVG);
 		} catch (e) {
