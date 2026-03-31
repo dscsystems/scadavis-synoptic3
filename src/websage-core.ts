@@ -2594,6 +2594,10 @@ export function createWebSAGEEngine (options: WebSAGEOptions): WebSAGEEngine {
     }
 
     state.SVGDoc.setAttributeNS(null, 'style', 'background-color: ' + cor + ';')
+    // bg color on SVG div id="svgdiv"
+    const svgdiv = document.getElementById('svgdiv')
+    if (svgdiv) svgdiv.style.backgroundColor = cor
+
     emitEvent('backgroundColor', { color: cor })
   }
 
@@ -2733,6 +2737,10 @@ export function createWebSAGEEngine (options: WebSAGEOptions): WebSAGEEngine {
           )) != ''
       if (state.g_isInkscape) {
         state.Color_BackgroundSVG = state.ScreenViewer_Background
+        const sodipodibase = state.SVGDoc.getElementById('base')
+        if (sodipodibase) {
+          state.Color_BackgroundSVG = sodipodibase.attributes.pagecolor.value
+        }
       }
 
       if (state.SVGDoc != null) setBgColor(state.Color_BackgroundSVG)

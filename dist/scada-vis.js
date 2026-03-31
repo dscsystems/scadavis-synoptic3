@@ -854,7 +854,9 @@ function createWebSAGEEngine(options) {
 			if (n) state.Color_BackgroundSVG = e = n.attributes.pagecolor.value;
 			else return;
 		}
-		state.SVGDoc.setAttributeNS(null, "style", "background-color: " + e + ";"), emitEvent("backgroundColor", { color: e });
+		state.SVGDoc.setAttributeNS(null, "style", "background-color: " + e + ";");
+		let n = document.getElementById("svgdiv");
+		n && (n.style.backgroundColor = e), emitEvent("backgroundColor", { color: e });
 	}
 	function translateColor(e) {
 		let n;
@@ -947,7 +949,12 @@ function createWebSAGEEngine(options) {
 				return;
 			}
 			let n = state.SVGDoc.viewBox;
-			n && n.baseVal && (state.g_originalViewBox = n.baseVal.valueAsString), state.g_isInkscape = (state.SVGDoc.getAttributeNS(null, "inkscape:version") || state.SVGDoc.getAttributeNS("http://www.inkscape.org/namespaces/inkscape", "version")) != "", state.g_isInkscape && (state.Color_BackgroundSVG = state.ScreenViewer_Background), state.SVGDoc != null && setBgColor(state.Color_BackgroundSVG);
+			if (n && n.baseVal && (state.g_originalViewBox = n.baseVal.valueAsString), state.g_isInkscape = (state.SVGDoc.getAttributeNS(null, "inkscape:version") || state.SVGDoc.getAttributeNS("http://www.inkscape.org/namespaces/inkscape", "version")) != "", state.g_isInkscape) {
+				state.Color_BackgroundSVG = state.ScreenViewer_Background;
+				let e = state.SVGDoc.getElementById("base");
+				e && (state.Color_BackgroundSVG = e.attributes.pagecolor.value);
+			}
+			state.SVGDoc != null && setBgColor(state.Color_BackgroundSVG);
 		} catch (e) {
 			console.error("Error initializing SVG:", e);
 		}
