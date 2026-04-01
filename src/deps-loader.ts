@@ -37,11 +37,7 @@ import * as d3 from 'd3'
 import * as vega from 'vega'
 import * as vl from 'vega-lite'
 import chroma from 'chroma-js'
-
-// Load snapsvg from CDN since it has bundling issues
-const CDN_URLS = {
-  snapsvg: 'https://unpkg.com/snapsvg@0.5.1/dist/snap.svg-min.js',
-}
+import Snap from 'snapsvg-cjs'
 
 // Register on window for legacy code that uses globals
 if (typeof window !== 'undefined') {
@@ -51,6 +47,7 @@ if (typeof window !== 'undefined') {
   ;(window as any).vega = vega
   ;(window as any).vl = vl
   ;(window as any).chroma = chroma
+  ;(window as any).Snap = Snap
 }
 
 /**
@@ -110,9 +107,7 @@ export async function loadDependencies(): Promise<void> {
     return Promise.resolve()
   }
 
-  // Load CDN dependencies (snapsvg has bundling issues)
-  await loadScript(CDN_URLS.snapsvg)
-
+  // All dependencies are now handled via imports and bundled by Vite
   isLoaded = true
 }
 

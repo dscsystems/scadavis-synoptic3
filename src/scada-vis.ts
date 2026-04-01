@@ -302,8 +302,8 @@ export class ScadaVis extends HTMLElement {
   }
 
   // Intervals/timeouts for cleanup
-  private _intervals: number[] = []
-  private _timeouts: number[] = []
+  private _intervals: any[] = []
+  private _timeouts: any[] = []
 
   // Promise resolution functions for refreshDisplay
   private _resolveFunction: ((value: boolean) => void) | null = null

@@ -49,8 +49,11 @@
     "vite": "^8.0.3"
   },
   "dependencies": {
+    "@types/snapsvg": "^0.5.8",
+    "@types/sprintf-js": "^1.1.4",
     "chroma-js": "^3.2.0",
     "jquery": "^4.0.0",
-    "snapsvg": "^0.5.1"
+    "snapsvg-cjs": "^0.0.6",
+    "sprintf-js": "^1.1.3"
   }
 }

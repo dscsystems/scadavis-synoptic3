@@ -153,7 +153,7 @@ export function createVegaCharts(options: VegaChartsOptions): VegaChartsEngine {
   let vegaNum = 0
 
   // Track intervals for cleanup
-  const intervals: number[] = []
+  const intervals: any[] = []
 
   // Track Vega views for cleanup
   const vegaViews: any[] = []
