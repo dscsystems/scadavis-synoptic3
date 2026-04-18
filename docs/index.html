@@ -14,31 +14,34 @@
 <li>📱 <strong>Responsive</strong> - Adapts to container size</li>
 </ul>
 <h2 id="installation" class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
-<h3 id="npm" class="tsd-anchor-link">NPM<a href="#npm" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">scadavis-synoptic3</span>
+<p>Clone the repository on self-hosted server:</p>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">clone</span><span class="hl-1"> </span><span class="hl-2">https://github.com/dscsystems/scadavis-synoptic3.git</span>
 </code><button type="button">Copy</button></pre>
 
-<h3 id="cdn" class="tsd-anchor-link">CDN<a href="#cdn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-5"> </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><span class="hl-3">&gt;</span><br/><span class="hl-5">  </span><span class="hl-8">import</span><span class="hl-5"> </span><span class="hl-2">&#39;https://unpkg.com/scadavis-synoptic3/index.js&#39;</span><span class="hl-5">;</span><br/><span class="hl-3">&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span>
+<p>Install dependencies and build:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">build</span>
 </code><button type="button">Copy</button></pre>
 
-<h3 id="local" class="tsd-anchor-link">Local<a href="#local" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<p>Copy the <code>scadavis-synoptic3</code> folder to your project and import:</p>
-<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-5"> </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><span class="hl-5"> </span><span class="hl-6">src</span><span class="hl-5">=</span><span class="hl-7">&quot;./scadavis-synoptic3/scada-vis.js&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span>
+<h3 id="import-from-scadavisio" class="tsd-anchor-link">Import from <a href="http://SCADAvis.io">SCADAvis.io</a><a href="#import-from-scadavisio" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-5"> </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><span class="hl-5"> </span><span class="hl-6">src</span><span class="hl-5">=</span><span class="hl-7">&quot;https://scadavis.io/synoptic3/scada-vis.js&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span>
 </code><button type="button">Copy</button></pre>
 
-<h3 id="usage" class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<h3 id="import-from-self-hosted-server" class="tsd-anchor-link">Import from self-hosted server<a href="#import-from-self-hosted-server" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-5"> </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><span class="hl-5"> </span><span class="hl-6">src</span><span class="hl-5">=</span><span class="hl-7">&quot;./dist/scada-vis.js&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="basic-usage" class="tsd-anchor-link">Basic Usage<a href="#basic-usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <p>Add the component to your HTML:</p>
-<pre><code class="html"><span class="hl-3">&lt;!</span><span class="hl-4">DOCTYPE</span><span class="hl-1"> </span><span class="hl-6">html</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;</span><span class="hl-4">html</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;</span><span class="hl-4">head</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-5"> </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><span class="hl-5"> </span><span class="hl-6">src</span><span class="hl-5">=</span><span class="hl-7">&quot;https://scadavis.io/synoptic3/scada-vis.js&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;/</span><span class="hl-4">head</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;</span><span class="hl-4">body</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-9">&lt;!-- Basic usage --&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;</span><span class="hl-4">scada-vis</span><span class="hl-1"> </span><span class="hl-6">id</span><span class="hl-1">=</span><span class="hl-7">&quot;scada-vis1&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">scada-vis</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><br/><span class="hl-3">&lt;/</span><span class="hl-4">body</span><span class="hl-3">&gt;</span><br/><br/><span class="hl-3">&lt;/</span><span class="hl-4">html</span><span class="hl-3">&gt;</span>
+<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">html</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;</span><span class="hl-4">head</span><span class="hl-3">&gt;</span><br/><span class="hl-1">    </span><span class="hl-3">&lt;</span><span class="hl-4">script</span><br/><span class="hl-5">      </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><br/><span class="hl-5">      </span><span class="hl-6">src</span><span class="hl-5">=</span><span class="hl-7">&quot;https://scadavis.io/synoptic3/scada-vis.js&quot;</span><br/><span class="hl-5">    </span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;/</span><span class="hl-4">head</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;</span><span class="hl-4">body</span><span class="hl-3">&gt;</span><br/><span class="hl-1">    </span><span class="hl-8">&lt;!-- Use the SCADAvis.io custom element --&gt;</span><br/><span class="hl-1">    </span><span class="hl-3">&lt;</span><span class="hl-4">scada-vis</span><span class="hl-1"> </span><span class="hl-6">id</span><span class="hl-1">=</span><span class="hl-7">&quot;scada-vis1&quot;</span><span class="hl-1"> </span><span class="hl-6">style</span><span class="hl-1">=</span><span class="hl-7">&quot;height:250px;width:250px;&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">scada-vis</span><span class="hl-3">&gt;</span><br/><span class="hl-1">    </span><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-3">&gt;</span><br/><span class="hl-5">      </span><span class="hl-9">window</span><span class="hl-5">.</span><span class="hl-0">onload</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-10">async</span><span class="hl-5"> () </span><span class="hl-10">=&gt;</span><span class="hl-5"> {</span><br/><span class="hl-5">        </span><span class="hl-8">// Get reference to component (id=&quot;scada-vis1&quot;)</span><br/><span class="hl-5">        </span><span class="hl-10">const</span><span class="hl-5"> </span><span class="hl-11">component</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-9">document</span><span class="hl-5">.</span><span class="hl-0">querySelector</span><span class="hl-5">(</span><span class="hl-2">&#39;#scada-vis1&#39;</span><span class="hl-5">)</span><br/><span class="hl-5">        </span><span class="hl-8">// load SVG from URL, wait until ready</span><br/><span class="hl-5">        </span><span class="hl-12">await</span><span class="hl-5"> </span><span class="hl-9">component</span><span class="hl-5">.</span><span class="hl-0">loadURL</span><span class="hl-5">(</span><br/><span class="hl-5">          </span><span class="hl-2">&#39;https://raw.githubusercontent.com/dscsystems/displayfiles/master/donut.svg&#39;</span><br/><span class="hl-5">        )</span><br/><span class="hl-5">        </span><span class="hl-8">// update values in the display at each 1.5 seconds</span><br/><span class="hl-5">        </span><span class="hl-0">setInterval</span><span class="hl-5">(() </span><span class="hl-10">=&gt;</span><span class="hl-5"> {</span><br/><span class="hl-5">          </span><span class="hl-9">component</span><span class="hl-5">.</span><span class="hl-0">setValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG1&#39;</span><span class="hl-5">, </span><span class="hl-9">Math</span><span class="hl-5">.</span><span class="hl-0">random</span><span class="hl-5">() </span><span class="hl-1">*</span><span class="hl-5"> </span><span class="hl-13">100</span><span class="hl-5">)</span><br/><span class="hl-5">          </span><span class="hl-12">if</span><span class="hl-5"> (</span><span class="hl-9">component</span><span class="hl-5">.</span><span class="hl-0">getValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG1&#39;</span><span class="hl-5">) </span><span class="hl-1">&gt;=</span><span class="hl-5"> </span><span class="hl-13">75</span><span class="hl-5">)</span><br/><span class="hl-5">            </span><span class="hl-9">component</span><span class="hl-5">.</span><span class="hl-0">setValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG2&#39;</span><span class="hl-5">, </span><span class="hl-2">&#39;alarmed!&#39;</span><span class="hl-5">)</span><br/><span class="hl-5">          </span><span class="hl-12">else</span><span class="hl-5"> </span><span class="hl-9">component</span><span class="hl-5">.</span><span class="hl-0">setValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG2&#39;</span><span class="hl-5">, </span><span class="hl-2">&#39;normal&#39;</span><span class="hl-5">)</span><br/><span class="hl-5">        }, </span><span class="hl-13">1500</span><span class="hl-5">)</span><br/><span class="hl-5">      }</span><br/><span class="hl-5">    </span><span class="hl-3">&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;/</span><span class="hl-4">body</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;/</span><span class="hl-4">html</span><span class="hl-3">&gt;</span>
 </code><button type="button">Copy</button></pre>
 
-<h3 id="programmatic-usage" class="tsd-anchor-link">Programmatic Usage<a href="#programmatic-usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<h3 id="advanced-usage" class="tsd-anchor-link">Advanced Usage<a href="#advanced-usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <p>Control the component via JavaScript:</p>
-<pre><code class="javascript"><span class="hl-9">// Get reference to component</span><br/><span class="hl-10">const</span><span class="hl-1"> </span><span class="hl-11">component</span><span class="hl-1"> = </span><span class="hl-12">document</span><span class="hl-1">.</span><span class="hl-0">querySelector</span><span class="hl-1">(</span><span class="hl-2">&#39;#scada-vis1&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-9">// Load an SVG file</span><br/><span class="hl-8">await</span><span class="hl-1"> </span><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">loadSVG</span><span class="hl-1">(</span><span class="hl-2">&#39;diagram.svg&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-9">// Set a single value</span><br/><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">setValue</span><span class="hl-1">(</span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-1">, </span><span class="hl-13">123.45</span><span class="hl-1">);</span><br/><br/><span class="hl-9">// Set multiple values</span><br/><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">setValues</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-12">:</span><span class="hl-1"> </span><span class="hl-13">100</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;TAG002&#39;</span><span class="hl-12">:</span><span class="hl-1"> </span><span class="hl-13">200</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;TAG003&#39;</span><span class="hl-12">:</span><span class="hl-1"> </span><span class="hl-10">true</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-9">// Set value with quality flags</span><br/><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">setValue</span><span class="hl-1">(</span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-1">, </span><span class="hl-13">123.45</span><span class="hl-1">, </span><span class="hl-10">false</span><span class="hl-1">, </span><span class="hl-10">false</span><span class="hl-1">, </span><span class="hl-2">&#39;Temperature Sensor&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-9">// Get current value</span><br/><span class="hl-10">const</span><span class="hl-1"> </span><span class="hl-11">value</span><span class="hl-1"> = </span><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">getValue</span><span class="hl-1">(</span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-9">// Get all tags found in SVG</span><br/><span class="hl-10">const</span><span class="hl-1"> </span><span class="hl-11">tags</span><span class="hl-1"> = </span><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">getTagsList</span><span class="hl-1">();</span>
+<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">html</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;</span><span class="hl-4">head</span><span class="hl-3">&gt;</span><br/><span class="hl-1">    </span><span class="hl-3">&lt;</span><span class="hl-4">script</span><br/><span class="hl-5">      </span><span class="hl-6">src</span><span class="hl-5">=</span><span class="hl-7">&quot;https://scadavis.io/synoptic3/scada-vis.js&quot;</span><br/><span class="hl-5">      </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><br/><span class="hl-5">    </span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;/</span><span class="hl-4">head</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;</span><span class="hl-4">body</span><span class="hl-3">&gt;</span><br/><span class="hl-1">    </span><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-3">&gt;</span><br/><span class="hl-5">      </span><span class="hl-9">window</span><span class="hl-5">.</span><span class="hl-0">onload</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> () </span><span class="hl-10">=&gt;</span><span class="hl-5"> {</span><br/><span class="hl-5">        </span><span class="hl-8">// create a new scada-vis instance</span><br/><span class="hl-5">        </span><span class="hl-0">scadavisInit</span><span class="hl-5">({</span><br/><span class="hl-5">          </span><span class="hl-9">svgurl:</span><br/><span class="hl-5">            </span><span class="hl-2">&#39;https://raw.githubusercontent.com/dscsystems/displayfiles/master/speedometer.svg&#39;</span><span class="hl-5">,</span><br/><span class="hl-5">        }).</span><span class="hl-0">then</span><span class="hl-5">((</span><span class="hl-9">sv</span><span class="hl-5">) </span><span class="hl-10">=&gt;</span><span class="hl-5"> {</span><br/><span class="hl-5">          </span><span class="hl-9">sv</span><span class="hl-5">.</span><span class="hl-0">enableMouse</span><span class="hl-5">(</span><span class="hl-10">true</span><span class="hl-5">, </span><span class="hl-10">true</span><span class="hl-5">)</span><br/><span class="hl-5">          </span><span class="hl-9">sv</span><span class="hl-5">.</span><span class="hl-0">storeValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG1&#39;</span><span class="hl-5">, </span><span class="hl-13">0</span><span class="hl-5">)</span><br/><span class="hl-5">          </span><span class="hl-8">// update at each .25 seconds</span><br/><span class="hl-5">          </span><span class="hl-0">setInterval</span><span class="hl-5">(</span><span class="hl-10">function</span><span class="hl-5"> () {</span><br/><span class="hl-5">            </span><span class="hl-10">let</span><span class="hl-5"> </span><span class="hl-9">v</span><span class="hl-5"> </span><span class="hl-1">=</span><br/><span class="hl-5">              </span><span class="hl-9">Math</span><span class="hl-5">.</span><span class="hl-0">random</span><span class="hl-5">() </span><span class="hl-1">*</span><span class="hl-5"> </span><span class="hl-13">10</span><span class="hl-5"> </span><span class="hl-1">-</span><br/><span class="hl-5">              (</span><span class="hl-13">2.5</span><span class="hl-5"> </span><span class="hl-1">*</span><span class="hl-5"> </span><span class="hl-9">sv</span><span class="hl-5">.</span><span class="hl-0">getValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG1&#39;</span><span class="hl-5">)) </span><span class="hl-1">/</span><span class="hl-5"> </span><span class="hl-13">60</span><span class="hl-5"> </span><span class="hl-1">+</span><br/><span class="hl-5">              </span><span class="hl-9">sv</span><span class="hl-5">.</span><span class="hl-0">getValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG1&#39;</span><span class="hl-5">)</span><br/><span class="hl-5">            </span><span class="hl-12">if</span><span class="hl-5"> (</span><span class="hl-9">v</span><span class="hl-5"> </span><span class="hl-1">&lt;</span><span class="hl-5"> </span><span class="hl-13">0</span><span class="hl-5">) </span><span class="hl-9">v</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-13">0</span><br/><span class="hl-5">            </span><span class="hl-12">if</span><span class="hl-5"> (</span><span class="hl-9">v</span><span class="hl-5"> </span><span class="hl-1">&gt;</span><span class="hl-5"> </span><span class="hl-13">120</span><span class="hl-5">) </span><span class="hl-9">v</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-13">120</span><br/><span class="hl-5">            </span><span class="hl-9">sv</span><span class="hl-5">.</span><span class="hl-0">storeValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG1&#39;</span><span class="hl-5">, </span><span class="hl-9">v</span><span class="hl-5">)</span><br/><span class="hl-5">            </span><span class="hl-9">sv</span><span class="hl-5">.</span><span class="hl-0">updateValues</span><span class="hl-5">()</span><br/><span class="hl-5">          }, </span><span class="hl-13">250</span><span class="hl-5">)</span><br/><span class="hl-5">        })</span><br/><span class="hl-5">      }</span><br/><span class="hl-5">    </span><span class="hl-3">&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">&lt;/</span><span class="hl-4">body</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;/</span><span class="hl-4">html</span><span class="hl-3">&gt;</span>
 </code><button type="button">Copy</button></pre>
 
-<h2 id="api-reference" class="tsd-anchor-link">API Reference<a href="#api-reference" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
-<h3 id="properties" class="tsd-anchor-link">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<h2 id="apicustom-element-reference" class="tsd-anchor-link">API/Custom Element Reference<a href="#apicustom-element-reference" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="properties-attributes-of-the-custom-element-" class="tsd-anchor-link">Properties (Attributes of the custom element <code>&lt;scada-vis&gt;</code>)<a href="#properties-attributes-of-the-custom-element-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <table>
 <thead>
 <tr>
@@ -66,6 +69,62 @@
 </tbody>
 </table>
 <h3 id="methods" class="tsd-anchor-link">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<h4 id="initialization" class="tsd-anchor-link">Initialization<a href="#initialization" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Parameters</th>
+<th>Description</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scadavisInit(options)</code></td>
+<td><code>options: Object</code></td>
+<td>Initialize the component</td>
+<td><code>Promise&lt;ScadaVis&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>container</code></td>
+<td>String</td>
+<td>Optional. DIV container element ID</td>
+</tr>
+<tr>
+<td><code>svgurl</code></td>
+<td>String</td>
+<td>Optional. URL of the SVG file to load</td>
+</tr>
+<tr>
+<td><code>styleParams</code></td>
+<td>String</td>
+<td>Optional. Style parameters</td>
+</tr>
+<tr>
+<td><code>iframeparams</code></td>
+<td>String</td>
+<td>Optional. Alias for <code>styleParams</code></td>
+</tr>
+<tr>
+<td><code>colorsTable</code></td>
+<td>String</td>
+<td>Optional. JSON string of color mappings</td>
+</tr>
+</tbody>
+</table>
 <h4 id="svg-loading" class="tsd-anchor-link">SVG Loading<a href="#svg-loading" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4>
 <table>
 <thead>
@@ -73,6 +132,7 @@
 <th>Method</th>
 <th>Parameters</th>
 <th>Description</th>
+<th>Returns</th>
 </tr>
 </thead>
 <tbody>
@@ -80,11 +140,13 @@
 <td><code>loadSVG(url)</code></td>
 <td><code>url: string</code></td>
 <td>Load an SVG file from URL</td>
+<td><code>Promise&lt;void&gt;</code></td>
 </tr>
 <tr>
 <td><code>setSVG(svgContent)</code></td>
 <td><code>svgContent: string</code></td>
 <td>Set SVG content directly</td>
+<td><code>Promise&lt;void&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -101,12 +163,22 @@
 <tr>
 <td><code>setValue(tag, value, failed?, alarmed?, description?)</code></td>
 <td><code>tag: string, value: number|boolean, failed?: boolean, alarmed?: boolean, description?: string</code></td>
-<td>Set a single tag value</td>
+<td>Set a single tag value and update display</td>
 </tr>
 <tr>
 <td><code>setValues(values, qualifs?)</code></td>
-<td><code>values: Object, qualifs?: Object</code></td>
-<td>Set multiple tag values</td>
+<td><code>values: Object, qualifs?: objects</code></td>
+<td>Set multiple { tag: value } and optional { tag: quality } and update display</td>
+</tr>
+<tr>
+<td><code>storeValue(tag, value, failed?, alarmed?, description?)</code></td>
+<td><code>tag: string, value: number|boolean, failed?: boolean, alarmed?: boolean, description?: string</code></td>
+<td>Set a single tag value without updating display</td>
+</tr>
+<tr>
+<td><code>updateValues(values)</code></td>
+<td>Optional <code>values: Object</code> { tag: value } pairs to include</td>
+<td>Update display with values. If no values are provided, update all stored values</td>
 </tr>
 <tr>
 <td><code>getValue(tag)</code></td>
@@ -168,19 +240,29 @@
 </thead>
 <tbody>
 <tr>
-<td><code>enableTools(options)</code></td>
-<td><code>options: Object</code></td>
+<td><code>enableTools(panEnabled, zoomEnabled)</code></td>
+<td><code>panEnabled: boolean, zoomEnabled: boolean</code></td>
 <td>Enable/disable toolbar buttons</td>
 </tr>
 <tr>
-<td><code>enableMouse(options)</code></td>
-<td><code>options: Object</code></td>
+<td><code>setToolbarVisible(show)</code></td>
+<td><code>show: boolean</code></td>
+<td>Show/hide toolbar</td>
+</tr>
+<tr>
+<td><code>enableMouse(panEnabled, zoomEnabled)</code></td>
+<td><code>panEnabled: boolean, zoomEnabled: boolean</code></td>
 <td>Enable/disable mouse interactions</td>
 </tr>
 <tr>
-<td><code>setMouseWheel(options)</code></td>
-<td><code>options: Object</code></td>
+<td><code>setMouseWheel(directionBackOut, blockEventPropagation)</code></td>
+<td><code>directionBackOut: boolean, blockEventPropagation: boolean</code></td>
 <td>Configure mouse wheel behavior</td>
+</tr>
+<tr>
+<td><code>enableKeyboard(enabled)</code></td>
+<td><code>enabled: boolean</code></td>
+<td>Enable/disable keyboard shortcuts</td>
 </tr>
 <tr>
 <td><code>enableAlarmFlash(enabled)</code></td>
@@ -191,6 +273,11 @@
 <td><code>hideWatermark()</code></td>
 <td>-</td>
 <td>Hide the SCADAvis watermark</td>
+</tr>
+<tr>
+<td><code>setWatermarkVisible(show)</code></td>
+<td><code>show: boolean</code></td>
+<td>Show/hide watermark</td>
 </tr>
 </tbody>
 </table>
@@ -232,16 +319,6 @@
 <td>Set background color</td>
 </tr>
 <tr>
-<td><code>setToolbarVisible(show)</code></td>
-<td><code>show: boolean</code></td>
-<td>Show/hide toolbar</td>
-</tr>
-<tr>
-<td><code>setWatermarkVisible(show)</code></td>
-<td><code>show: boolean</code></td>
-<td>Show/hide watermark</td>
-</tr>
-<tr>
 <td><code>setStatus(status)</code></td>
 <td><code>status: string</code></td>
 <td>Update status display</td>
@@ -270,6 +347,7 @@
 <th>Method</th>
 <th>Parameters</th>
 <th>Description</th>
+<th>Return Value</th>
 </tr>
 </thead>
 <tbody>
@@ -277,11 +355,25 @@
 <td><code>getVersion()</code></td>
 <td>-</td>
 <td>Get component version string</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>getComponentVersion()</code></td>
+<td>-</td>
+<td>Get component version string</td>
+<td>string</td>
 </tr>
 <tr>
 <td><code>isReady()</code></td>
 <td>-</td>
 <td>Check if component is initialized</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code>getComponentState()</code></td>
+<td>-</td>
+<td>Get component state</td>
+<td>Number 0=not loaded, 1=loaded and ready for graphics, 2=SVG graphics processed and ready for data.</td>
 </tr>
 </tbody>
 </table>
@@ -307,11 +399,6 @@
 <td><code>{ tagsList: string[] }</code></td>
 </tr>
 <tr>
-<td><code>valueChange</code></td>
-<td>Value updated</td>
-<td><code>{ tag: string, value: any, quality: boolean }</code></td>
-</tr>
-<tr>
 <td><code>click</code></td>
 <td>Element clicked in SVG</td>
 <td><code>{ element: string, x: number, y: number }</code></td>
@@ -329,15 +416,14 @@
 </tbody>
 </table>
 <h4 id="event-example" class="tsd-anchor-link">Event Example<a href="#event-example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4>
-<pre><code class="javascript"><span class="hl-10">const</span><span class="hl-1"> </span><span class="hl-11">component</span><span class="hl-1"> = </span><span class="hl-12">document</span><span class="hl-1">.</span><span class="hl-0">querySelector</span><span class="hl-1">(</span><span class="hl-2">&#39;scada-vis&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-9">// Listen for ready event</span><br/><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">addEventListener</span><span class="hl-1">(</span><span class="hl-2">&#39;ready&#39;</span><span class="hl-1">, (</span><span class="hl-12">e</span><span class="hl-1">) </span><span class="hl-10">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-12">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-2">&#39;Component ready with tags:&#39;</span><span class="hl-1">, </span><span class="hl-12">e</span><span class="hl-1">.</span><span class="hl-12">detail</span><span class="hl-1">.</span><span class="hl-12">tagsList</span><span class="hl-1">);</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-9">// Listen for errors</span><br/><span class="hl-12">component</span><span class="hl-1">.</span><span class="hl-0">addEventListener</span><span class="hl-1">(</span><span class="hl-2">&#39;error&#39;</span><span class="hl-1">, (</span><span class="hl-12">e</span><span class="hl-1">) </span><span class="hl-10">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-12">console</span><span class="hl-1">.</span><span class="hl-0">error</span><span class="hl-1">(</span><span class="hl-2">&#39;Error:&#39;</span><span class="hl-1">, </span><span class="hl-12">e</span><span class="hl-1">.</span><span class="hl-12">detail</span><span class="hl-1">.</span><span class="hl-12">error</span><span class="hl-1">);</span><br/><span class="hl-1">});</span>
+<pre><code class="javascript"><span class="hl-10">const</span><span class="hl-1"> </span><span class="hl-11">component</span><span class="hl-1"> = </span><span class="hl-9">document</span><span class="hl-1">.</span><span class="hl-0">querySelector</span><span class="hl-1">(</span><span class="hl-2">&#39;scada-vis&#39;</span><span class="hl-1">)</span><br/><br/><span class="hl-8">// Listen for ready event</span><br/><span class="hl-9">component</span><span class="hl-1">.</span><span class="hl-0">addEventListener</span><span class="hl-1">(</span><span class="hl-2">&#39;ready&#39;</span><span class="hl-1">, (</span><span class="hl-9">e</span><span class="hl-1">) </span><span class="hl-10">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-9">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-2">&#39;Component ready with tags:&#39;</span><span class="hl-1">, </span><span class="hl-9">e</span><span class="hl-1">.</span><span class="hl-9">detail</span><span class="hl-1">.</span><span class="hl-9">tagsList</span><span class="hl-1">)</span><br/><span class="hl-1">})</span><br/><br/><span class="hl-8">// Listen for errors</span><br/><span class="hl-9">component</span><span class="hl-1">.</span><span class="hl-0">addEventListener</span><span class="hl-1">(</span><span class="hl-2">&#39;error&#39;</span><span class="hl-1">, (</span><span class="hl-9">e</span><span class="hl-1">) </span><span class="hl-10">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-9">console</span><span class="hl-1">.</span><span class="hl-0">error</span><span class="hl-1">(</span><span class="hl-2">&#39;Error:&#39;</span><span class="hl-1">, </span><span class="hl-9">e</span><span class="hl-1">.</span><span class="hl-9">detail</span><span class="hl-1">.</span><span class="hl-9">error</span><span class="hl-1">)</span><br/><span class="hl-1">})</span>
 </code><button type="button">Copy</button></pre>
 
 <h2 id="multiple-instances" class="tsd-anchor-link">Multiple Instances<a href="#multiple-instances" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <p>The component supports multiple independent instances on the same page:</p>
-<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">scada-vis</span><span class="hl-1"> </span><span class="hl-6">id</span><span class="hl-1">=</span><span class="hl-7">&quot;instanceA&quot;</span><span class="hl-1"> </span><span class="hl-6">src</span><span class="hl-1">=</span><span class="hl-7">&quot;diagram1.svg&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">scada-vis</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;</span><span class="hl-4">scada-vis</span><span class="hl-1"> </span><span class="hl-6">id</span><span class="hl-1">=</span><span class="hl-7">&quot;instanceB&quot;</span><span class="hl-1"> </span><span class="hl-6">src</span><span class="hl-1">=</span><span class="hl-7">&quot;diagram2.svg&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">scada-vis</span><span class="hl-3">&gt;</span><br/><br/><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-5"> </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><span class="hl-3">&gt;</span><br/><span class="hl-5">  </span><span class="hl-8">import</span><span class="hl-5"> </span><span class="hl-2">&#39;https://scadavis.io/synoptic3/scada-vis.js&#39;</span><span class="hl-5">;</span><br/><span class="hl-5">  </span><br/><span class="hl-5">  </span><span class="hl-10">const</span><span class="hl-5"> </span><span class="hl-11">instanceA</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-12">document</span><span class="hl-5">.</span><span class="hl-0">getElementById</span><span class="hl-5">(</span><span class="hl-2">&#39;instanceA&#39;</span><span class="hl-5">);</span><br/><span class="hl-5">  </span><span class="hl-10">const</span><span class="hl-5"> </span><span class="hl-11">instanceB</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-12">document</span><span class="hl-5">.</span><span class="hl-0">getElementById</span><span class="hl-5">(</span><span class="hl-2">&#39;instanceB&#39;</span><span class="hl-5">);</span><br/><span class="hl-5">  </span><br/><span class="hl-5">  </span><span class="hl-9">// Each instance has independent state</span><br/><span class="hl-5">  </span><span class="hl-12">instanceA</span><span class="hl-5">.</span><span class="hl-0">setValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-5">, </span><span class="hl-13">100</span><span class="hl-5">);</span><br/><span class="hl-5">  </span><span class="hl-12">instanceB</span><span class="hl-5">.</span><span class="hl-0">setValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-5">, </span><span class="hl-13">200</span><span class="hl-5">);  </span><span class="hl-9">// Different value for same tag name</span><br/><span class="hl-3">&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span>
+<pre><code class="html"><span class="hl-3">&lt;</span><span class="hl-4">scada-vis</span><span class="hl-1"> </span><span class="hl-6">id</span><span class="hl-1">=</span><span class="hl-7">&quot;instanceA&quot;</span><span class="hl-1"> </span><span class="hl-6">src</span><span class="hl-1">=</span><span class="hl-7">&quot;diagram1.svg&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">scada-vis</span><span class="hl-3">&gt;</span><br/><span class="hl-3">&lt;</span><span class="hl-4">scada-vis</span><span class="hl-1"> </span><span class="hl-6">id</span><span class="hl-1">=</span><span class="hl-7">&quot;instanceB&quot;</span><span class="hl-1"> </span><span class="hl-6">src</span><span class="hl-1">=</span><span class="hl-7">&quot;diagram2.svg&quot;</span><span class="hl-3">&gt;&lt;/</span><span class="hl-4">scada-vis</span><span class="hl-3">&gt;</span><br/><br/><span class="hl-3">&lt;</span><span class="hl-4">script</span><span class="hl-5"> </span><span class="hl-6">type</span><span class="hl-5">=</span><span class="hl-7">&quot;module&quot;</span><span class="hl-3">&gt;</span><br/><span class="hl-5">  </span><span class="hl-12">import</span><span class="hl-5"> </span><span class="hl-2">&#39;https://scadavis.io/synoptic3/scada-vis.js&#39;</span><br/><br/><span class="hl-5">  </span><span class="hl-10">const</span><span class="hl-5"> </span><span class="hl-11">instanceA</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-9">document</span><span class="hl-5">.</span><span class="hl-0">getElementById</span><span class="hl-5">(</span><span class="hl-2">&#39;instanceA&#39;</span><span class="hl-5">)</span><br/><span class="hl-5">  </span><span class="hl-10">const</span><span class="hl-5"> </span><span class="hl-11">instanceB</span><span class="hl-5"> </span><span class="hl-1">=</span><span class="hl-5"> </span><span class="hl-9">document</span><span class="hl-5">.</span><span class="hl-0">getElementById</span><span class="hl-5">(</span><span class="hl-2">&#39;instanceB&#39;</span><span class="hl-5">)</span><br/><br/><span class="hl-5">  </span><span class="hl-8">// Each instance has independent state</span><br/><span class="hl-5">  </span><span class="hl-9">instanceA</span><span class="hl-5">.</span><span class="hl-0">setValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-5">, </span><span class="hl-13">100</span><span class="hl-5">)</span><br/><span class="hl-5">  </span><span class="hl-9">instanceB</span><span class="hl-5">.</span><span class="hl-0">setValue</span><span class="hl-5">(</span><span class="hl-2">&#39;TAG001&#39;</span><span class="hl-5">, </span><span class="hl-13">200</span><span class="hl-5">) </span><span class="hl-8">// Different value for same tag name</span><br/><span class="hl-3">&lt;/</span><span class="hl-4">script</span><span class="hl-3">&gt;</span>
 </code><button type="button">Copy</button></pre>
 
-<p>See <code>multi-instance-test.html</code> for a complete example.</p>
 <h2 id="browser-compatibility" class="tsd-anchor-link">Browser Compatibility<a href="#browser-compatibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <table>
 <thead>
@@ -393,13 +479,4 @@
 <li><a href="https://github.com/dscsystems/scadavis-synoptic3">GitHub</a></li>
 <li><a href="https://www.npmjs.com/package/scadavis-synoptic3">NPM</a></li>
 </ul>
-<h2 id="contributing" class="tsd-anchor-link">Contributing<a href="#contributing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
-<p>Contributions are welcome! Please read our contributing guidelines before submitting pull requests.</p>
-<ol>
-<li>Fork the repository</li>
-<li>Create your feature branch (<code>git checkout -b feature/amazing-feature</code>)</li>
-<li>Commit your changes (<code>git commit -m 'Add amazing feature'</code>)</li>
-<li>Push to the branch (<code>git push origin feature/amazing-feature</code>)</li>
-<li>Open a Pull Request</li>
-</ol>
-</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#scadavis-web-component"><span>SCAD<wbr/>Avis <wbr/>Web <wbr/>Component</span></a><ul><li><a href="#features"><span>Features</span></a></li><li><a href="#installation"><span>Installation</span></a></li><li><ul><li><a href="#npm"><span>NPM</span></a></li><li><a href="#cdn"><span>CDN</span></a></li><li><a href="#local"><span>Local</span></a></li><li><a href="#usage"><span>Usage</span></a></li><li><a href="#programmatic-usage"><span>Programmatic <wbr/>Usage</span></a></li></ul></li><li><a href="#api-reference"><span>API <wbr/>Reference</span></a></li><li><ul><li><a href="#properties"><span>Properties</span></a></li><li><a href="#methods"><span>Methods</span></a></li><li><ul><li><a href="#svg-loading"><span>SVG <wbr/>Loading</span></a></li><li><a href="#data-methods"><span>Data <wbr/>Methods</span></a></li><li><a href="#view-methods"><span>View <wbr/>Methods</span></a></li><li><a href="#configuration-methods"><span>Configuration <wbr/>Methods</span></a></li><li><a href="#color-methods"><span>Color <wbr/>Methods</span></a></li><li><a href="#display-methods"><span>Display <wbr/>Methods</span></a></li><li><a href="#utility-methods"><span>Utility <wbr/>Methods</span></a></li></ul></li><li><a href="#events"><span>Events</span></a></li><li><ul><li><a href="#event-example"><span>Event <wbr/>Example</span></a></li></ul></li></ul></li><li><a href="#multiple-instances"><span>Multiple <wbr/>Instances</span></a></li><li><a href="#browser-compatibility"><span>Browser <wbr/>Compatibility</span></a></li><li><ul><li><a href="#required-features"><span>Required <wbr/>Features</span></a></li></ul></li><li><a href="#license"><span>License</span></a></li><li><a href="#links"><span>Links</span></a></li><li><a href="#contributing"><span>Contributing</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html">@scadavis/web-component</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#scadavis-web-component"><span>SCAD<wbr/>Avis <wbr/>Web <wbr/>Component</span></a><ul><li><a href="#features"><span>Features</span></a></li><li><a href="#installation"><span>Installation</span></a></li><li><ul><li><a href="#import-from-scadavisio"><span>Import from <wbr/>SCAD<wbr/>Avis.io</span></a></li><li><a href="#import-from-self-hosted-server"><span>Import from self-<wbr/>hosted server</span></a></li><li><a href="#basic-usage"><span>Basic <wbr/>Usage</span></a></li><li><a href="#advanced-usage"><span>Advanced <wbr/>Usage</span></a></li></ul></li><li><a href="#apicustom-element-reference"><span>API/<wbr/>Custom <wbr/>Element <wbr/>Reference</span></a></li><li><ul><li><a href="#properties-attributes-of-the-custom-element-"><span>Properties (<wbr/>Attributes of the custom element )</span></a></li><li><a href="#methods"><span>Methods</span></a></li><li><ul><li><a href="#initialization"><span>Initialization</span></a></li><li><a href="#svg-loading"><span>SVG <wbr/>Loading</span></a></li><li><a href="#data-methods"><span>Data <wbr/>Methods</span></a></li><li><a href="#view-methods"><span>View <wbr/>Methods</span></a></li><li><a href="#configuration-methods"><span>Configuration <wbr/>Methods</span></a></li><li><a href="#color-methods"><span>Color <wbr/>Methods</span></a></li><li><a href="#display-methods"><span>Display <wbr/>Methods</span></a></li><li><a href="#utility-methods"><span>Utility <wbr/>Methods</span></a></li></ul></li><li><a href="#events"><span>Events</span></a></li><li><ul><li><a href="#event-example"><span>Event <wbr/>Example</span></a></li></ul></li></ul></li><li><a href="#multiple-instances"><span>Multiple <wbr/>Instances</span></a></li><li><a href="#browser-compatibility"><span>Browser <wbr/>Compatibility</span></a></li><li><ul><li><a href="#required-features"><span>Required <wbr/>Features</span></a></li></ul></li><li><a href="#license"><span>License</span></a></li><li><a href="#links"><span>Links</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html">@scadavis/web-component</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
