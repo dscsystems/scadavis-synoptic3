@@ -355,7 +355,7 @@ function createWebSAGEEngine(options) {
 			if (e === null) return console.warn("[NaN DEBUG] valueResolveCoded: numeric tag not found:", tag, "parsed as", t), retnok;
 			{
 				let n = state.points.get(e).value;
-				return typeof n == "number" && isNaN(n) && console.warn("[NaN DEBUG] valueResolveCoded: point value is NaN for key:", e, "tag:", tag), typeof n == "boolean" && (n = n ? 0 : 1), n;
+				return typeof n == "number" && isNaN(n) && console.warn("[NaN DEBUG] valueResolveCoded: point value is NaN for key:", e, "tag:", tag), typeof n == "boolean" && (n = +!n), n;
 			}
 		}
 		if (tag = tag.trim(), state.NPTS.has(tag)) {
@@ -366,13 +366,13 @@ function createWebSAGEEngine(options) {
 				r.length > 0 && (r[0].textContent = "TAG: " + tag + "\nKEY: " + e + "\nVAL: " + (n ? n.value : 0));
 			}
 			let r = n ? n.value : 0;
-			return typeof r == "number" && isNaN(r) && console.warn("[NaN DEBUG] valueResolveCoded: point value is NaN for string tag:", tag, "key:", e), typeof r == "boolean" && (r = r ? 0 : 1), r;
+			return typeof r == "number" && isNaN(r) && console.warn("[NaN DEBUG] valueResolveCoded: point value is NaN for string tag:", tag, "key:", e), typeof r == "boolean" && (r = +!r), r;
 		}
 		obj && obj.style.visibility === "collapse" && (obj.style.visibility = "inherit");
 		const directKey = resolvePointKey(tag);
 		if (directKey !== null) {
 			let e = state.points.get(directKey).value;
-			return typeof e == "boolean" && (e = e ? 0 : 1), e;
+			return typeof e == "boolean" && (e = +!e), e;
 		}
 		if (tag.indexOf("#") == 0 || tag.indexOf("%") == 0) return retnok;
 		const f = getFlags(Number(tag));
@@ -1221,7 +1221,7 @@ function createDataProcessor(e) {
 							break;
 						default: break;
 					}
-					O === null ? I !== null && !isNaN(parseFloat(I)) ? (l = parseFloat(I), L !== null && isNaN(parseFloat(L)) && (S = L)) : L !== null && !isNaN(parseFloat(L)) && (l = parseFloat(L), I !== null && isNaN(parseFloat(I)) && (S = I)) : (l = O, I !== null && isNaN(parseFloat(I)) ? S = I : L !== null && isNaN(parseFloat(L)) && (S = L)), l === null && P !== null ? (l = P ? 1 : 0, R = !0, F !== null && (p = F)) : (P !== null && (p = P), N !== null && (_ = N)), S === null || S === "" ? S = (o.range || "range") + "-" + (e + 1) : L !== null && (T = L);
+					O === null ? I !== null && !isNaN(parseFloat(I)) ? (l = parseFloat(I), L !== null && isNaN(parseFloat(L)) && (S = L)) : L !== null && !isNaN(parseFloat(L)) && (l = parseFloat(L), I !== null && isNaN(parseFloat(I)) && (S = I)) : (l = O, I !== null && isNaN(parseFloat(I)) ? S = I : L !== null && isNaN(parseFloat(L)) && (S = L)), l === null && P !== null ? (l = +!!P, R = !0, F !== null && (p = F)) : (P !== null && (p = P), N !== null && (_ = N)), S === null || S === "" ? S = (o.range || "range") + "-" + (e + 1) : L !== null && (T = L);
 					let z = String(S);
 					d.NPTS.set(S, z), d.TAGS.set(z, S);
 					let V = n.getOrCreatePoint(z);
@@ -2502,7 +2502,7 @@ function jQueryFactory(e, n) {
 		});
 	}
 	function dt(e) {
-		for (var n, r, o, l = e.length, d = G.expr.relative[e[0].type], p = d || G.expr.relative[" "], S = d ? 1 : 0, T = ot(function(e) {
+		for (var n, r, o, l = e.length, d = G.expr.relative[e[0].type], p = d || G.expr.relative[" "], S = +!!d, T = ot(function(e) {
 			return e === n;
 		}, p, !0), O = ot(function(e) {
 			return _.call(n, e) > -1;
@@ -3582,7 +3582,7 @@ function jQueryFactory(e, n) {
 		return o ? Math.max(0, o[2] - (r || 0)) + (o[3] || "px") : n;
 	}
 	function qn(e, n, r, o, l, d) {
-		var p = n === "width" ? 1 : 0, _ = 0, S = 0, T = 0;
+		var p = +(n === "width"), _ = 0, S = 0, T = 0;
 		if (r === (o ? "border" : "content")) return 0;
 		for (; p < 4; p += 2) r === "margin" && (T += G.css(e, r + Xt[p], !0, l)), o ? (r === "content" && (S -= G.css(e, "padding" + Xt[p], !0, l)), r !== "margin" && (S -= G.css(e, "border" + Xt[p] + "Width", !0, l))) : (S += G.css(e, "padding" + Xt[p], !0, l), r === "padding" ? _ += G.css(e, "border" + Xt[p] + "Width", !0, l) : S += G.css(e, "border" + Xt[p] + "Width", !0, l));
 		return !o && d >= 0 && (S += Math.max(0, Math.ceil(e["offset" + n[0].toUpperCase() + n.slice(1)] - d - S - _ - .5)) || 0), S + T;
@@ -3685,7 +3685,7 @@ function jQueryFactory(e, n) {
 	}
 	function lr(e, n) {
 		var r, o = 0, l = { height: e };
-		for (n = n ? 1 : 0; o < 4; o += 2 - n) r = Xt[o], l["margin" + r] = l["padding" + r] = e;
+		for (n = +!!n; o < 4; o += 2 - n) r = Xt[o], l["margin" + r] = l["padding" + r] = e;
 		return n && (l.opacity = l.width = e), l;
 	}
 	function ur(e, n, r) {
@@ -4913,7 +4913,7 @@ function compareDefined(e = ascending$3) {
 	};
 }
 function ascendingDefined(e, n) {
-	return (e == null || !(e >= e)) - (n == null || !(n >= n)) || (e < n ? -1 : e > n ? 1 : 0);
+	return (e == null || !(e >= e)) - (n == null || !(n >= n)) || (e < n ? -1 : +(e > n));
 }
 //#endregion
 //#region node_modules/d3-array/src/groupSort.js
@@ -11266,7 +11266,7 @@ function clipRectangle(e, n, r, o) {
 		else T.point(d[0], d[1]);
 	}
 	function p(o, l) {
-		return abs$4(o[0] - e) < 1e-6 ? l > 0 ? 0 : 3 : abs$4(o[0] - r) < 1e-6 ? l > 0 ? 2 : 1 : abs$4(o[1] - n) < 1e-6 ? l > 0 ? 1 : 0 : l > 0 ? 3 : 2;
+		return abs$4(o[0] - e) < 1e-6 ? l > 0 ? 0 : 3 : abs$4(o[0] - r) < 1e-6 ? l > 0 ? 2 : 1 : abs$4(o[1] - n) < 1e-6 ? +(l > 0) : l > 0 ? 3 : 2;
 	}
 	function _(e, n) {
 		return S(e.x, n.x);
@@ -14068,7 +14068,7 @@ function formatLocale(e) {
 			if (n && !("Z" in o) && (o.Z = 0), "p" in o && (o.H = o.H % 12 + o.p * 12), o.m === void 0 && (o.m = "q" in o ? o.q : 0), "V" in o) {
 				if (o.V < 1 || o.V > 53) return null;
 				"w" in o || (o.w = 1), "Z" in o ? (d = utcDate$1(newDate(o.y, 0, 1)), p = d.getUTCDay(), d = p > 4 || p === 0 ? utcMonday.ceil(d) : utcMonday(d), d = utcDay.offset(d, (o.V - 1) * 7), o.y = d.getUTCFullYear(), o.m = d.getUTCMonth(), o.d = d.getUTCDate() + (o.w + 6) % 7) : (d = localDate$1(newDate(o.y, 0, 1)), p = d.getDay(), d = p > 4 || p === 0 ? timeMonday.ceil(d) : timeMonday(d), d = timeDay.offset(d, (o.V - 1) * 7), o.y = d.getFullYear(), o.m = d.getMonth(), o.d = d.getDate() + (o.w + 6) % 7);
-			} else ("W" in o || "U" in o) && ("w" in o || (o.w = "u" in o ? o.u % 7 : "W" in o ? 1 : 0), p = "Z" in o ? utcDate$1(newDate(o.y, 0, 1)).getUTCDay() : localDate$1(newDate(o.y, 0, 1)).getDay(), o.m = 0, o.d = "W" in o ? (o.w + 6) % 7 + o.W * 7 - (p + 5) % 7 : o.w + o.U * 7 - (p + 6) % 7);
+			} else ("W" in o || "U" in o) && ("w" in o || (o.w = "u" in o ? o.u % 7 : +("W" in o)), p = "Z" in o ? utcDate$1(newDate(o.y, 0, 1)).getUTCDay() : localDate$1(newDate(o.y, 0, 1)).getDay(), o.m = 0, o.d = "W" in o ? (o.w + 6) % 7 + o.W * 7 - (p + 5) % 7 : o.w + o.U * 7 - (p + 6) % 7);
 			return "Z" in o ? (o.H += o.Z / 100 | 0, o.M += o.Z % 100, utcDate$1(o)) : localDate$1(o);
 		};
 	}
@@ -17347,7 +17347,7 @@ function compare$1(e, n, r) {
 		e != null && (o.push(n[p] === DESCENDING ? -1 : 1), l.push(e = isFunction(e) ? e : field$1(e, null, r)), (accessorFields(e) || []).forEach((e) => d[e] = 1));
 	}), l.length === 0 ? null : accessor(p(l, o), Object.keys(d));
 }
-var ascending$1 = (e, n) => (e < n || e == null) && n != null ? -1 : (e > n || n == null) && e != null ? 1 : (n = n instanceof Date ? +n : n, e = e instanceof Date ? +e : e) !== e && n === n ? -1 : n !== n && e === e ? 1 : 0, comparator = (e, n) => e.length === 1 ? compare1(e[0], n[0]) : compareN(e, n, e.length), compare1 = (e, n) => function(r, o) {
+var ascending$1 = (e, n) => (e < n || e == null) && n != null ? -1 : (e > n || n == null) && e != null ? 1 : (n = n instanceof Date ? +n : n, e = e instanceof Date ? +e : e) !== e && n === n ? -1 : +(n !== n && e === e), comparator = (e, n) => e.length === 1 ? compare1(e[0], n[0]) : compareN(e, n, e.length), compare1 = (e, n) => function(r, o) {
 	return ascending$1(e(r), e(o)) * n;
 }, compareN = (e, n, r) => (n.push(0), function(o, l) {
 	let d, p = 0, _ = -1;
@@ -18001,7 +18001,7 @@ function timeUnits(e) {
 	let n = array$2(e).slice(), r = {};
 	return n.length || error$1("Missing time unit."), n.forEach((e) => {
 		has$2(UNITS, e) ? r[e] = 1 : error$1(`Invalid time unit: ${e}.`);
-	}), (r.week || r.day ? 1 : 0) + (r.quarter || r.month || r.date ? 1 : 0) + (r.dayofyear ? 1 : 0) > 1 && error$1(`Incompatible time units: ${e}`), n.sort((e, n) => UNITS[e] - UNITS[n]), n;
+	}), (r.week || r.day ? 1 : 0) + (r.quarter || r.month || r.date ? 1 : 0) + +!!r.dayofyear > 1 && error$1(`Incompatible time units: ${e}`), n.sort((e, n) => UNITS[e] - UNITS[n]), n;
 }
 var defaultSpecifiers = {
 	[YEAR]: "%Y ",
@@ -19094,7 +19094,7 @@ function update$6(e, n, r) {
 }
 function pulse(e, n, r) {
 	this.touch(e, r || NO_OPT);
-	let o = new Pulse(this, this._clock + (this._pulse ? 0 : 1)), l = e.pulse && e.pulse.source || [];
+	let o = new Pulse(this, this._clock + +!this._pulse), l = e.pulse && e.pulse.source || [];
 	return o.target = e, this._input[e.id] = n.pulse(o, l), this;
 }
 function Heap(e) {
@@ -24232,7 +24232,7 @@ var HybridRenderer = class extends Renderer {
 		super(e, n);
 	}
 	initialize(e, n, r) {
-		let o = domChild(domChild(e, 0, "div"), OPTS.svgOnTop ? 0 : 1, "div");
+		let o = domChild(domChild(e, 0, "div"), +!OPTS.svgOnTop, "div");
 		return super.initialize(o, n, r);
 	}
 }, Canvas = "canvas", Hybrid = "hybrid", PNG = "png", SVG = "svg", None$1 = "none", RenderType = {
@@ -25010,7 +25010,7 @@ var line$1 = (e, n, r, o) => "M" + e + "," + n + "L" + r + "," + o, lineR = (e, 
 	return "M" + e + "," + n + "C" + (e + p) + "," + (n + _) + " " + (r + _) + "," + (o - p) + " " + r + "," + o;
 }, curveR = (e, n, r, o) => curve(n * Math.cos(e), n * Math.sin(e), o * Math.cos(r), o * Math.sin(r)), orthoX = (e, n, r, o) => "M" + e + "," + n + "V" + o + "H" + r, orthoY = (e, n, r, o) => "M" + e + "," + n + "H" + r + "V" + o, orthoR = (e, n, r, o) => {
 	let l = Math.cos(e), d = Math.sin(e), p = Math.cos(r), _ = Math.sin(r), S = Math.abs(r - e) > Math.PI ? r <= e : r > e;
-	return "M" + n * l + "," + n * d + "A" + n + "," + n + " 0 0," + (S ? 1 : 0) + " " + n * p + "," + n * _ + "L" + o * p + "," + o * _;
+	return "M" + n * l + "," + n * d + "A" + n + "," + n + " 0 0," + +!!S + " " + n * p + "," + n * _ + "L" + o * p + "," + o * _;
 }, diagonalX = (e, n, r, o) => {
 	let l = (e + r) / 2;
 	return "M" + e + "," + n + "C" + l + "," + n + " " + l + "," + o + " " + r + "," + o;
@@ -25144,7 +25144,7 @@ function padDomain(e, n, r, o, l, d) {
 	return n = n.slice(), n[0] = S[0], n[n.length - 1] = S[1], n;
 }
 function domainCheck(e, n, r) {
-	return isLogarithmic(e) && Math.abs(n.reduce((e, n) => e + (n < 0 ? -1 : n > 0 ? 1 : 0), 0)) !== n.length && r.warn("Log scale domain includes zero: " + $(n)), n;
+	return isLogarithmic(e) && Math.abs(n.reduce((e, n) => e + (n < 0 ? -1 : +(n > 0)), 0)) !== n.length && r.warn("Log scale domain includes zero: " + $(n)), n;
 }
 function configureBins(e, n, r) {
 	let o = n.bins;
@@ -30649,7 +30649,7 @@ function SortedIndex() {
 function sort$1(e, n) {
 	return e.sort.call(n, (n, r) => {
 		let o = e[n], l = e[r];
-		return o < l ? -1 : o > l ? 1 : 0;
+		return o < l ? -1 : +(o > l);
 	}), permute(e, n);
 }
 function merge$1(e, n, r, o, l, d, p, _, S) {
@@ -34031,7 +34031,7 @@ function legendType(e, n) {
 	return !e.type && scaleCount(e) === 1 && (e.fill || e.stroke) && (r = isContinuous$1(n) ? Gradient : isDiscretizing$1(n) ? Discrete : Symbols), r === Gradient ? isDiscretizing$1(n) ? Discrete : Gradient : r;
 }
 function scaleCount(e) {
-	return LegendScales.reduce((n, r) => n + (e[r] ? 1 : 0), 0);
+	return LegendScales.reduce((n, r) => n + +!!e[r], 0);
 }
 function buildLegendEncode(e, n, r) {
 	let o = {
