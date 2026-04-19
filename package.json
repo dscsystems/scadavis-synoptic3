@@ -1,6 +1,6 @@
 {
   "name": "@dscsystems/scadavis-web-component",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "SCADAvis Web Component - Modern Web Component for SCADA-like SVG visualization",
   "main": "dist/scada-vis.js",
   "module": "dist/scada-vis.js",
