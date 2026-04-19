@@ -14,7 +14,6 @@ A modern Web Component implementation of the SCADAvis visualization library for 
 - 🔍 **Zoom & Pan** - Built-in navigation controls
 - 📈 **Vega Charts** - Integrated chart rendering support
 - 🔌 **Framework Agnostic** - Works with any framework or vanilla JS
-- 📱 **Responsive** - Adapts to container size
 
 ## Installation
 
@@ -278,6 +277,13 @@ The component supports multiple independent instances on the same page:
 - Shadow DOM v1
 - ES6 Modules
 - Fetch API
+
+## Development Guides (AI Skills)
+
+This repository includes specialized guides (AI Skills) to assist developers and AI coding assistants in utilizing the component effectively:
+
+-   **[SCADAvis API Guide](skills/scadavis-api/SKILL.md)**: Comprehensive reference for all methods, attributes, and event patterns.
+-   **[SCADAvis SVG Design Guide](skills/scadavis-svg/SKILL.md)**: Best practices and rules for creating SVGs optimized for the SCADAvis engine.
 
 ## License
 

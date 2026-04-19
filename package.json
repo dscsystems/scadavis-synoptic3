@@ -11,7 +11,8 @@
   },
   "sideEffects": true,
   "files": [
-    "dist/"
+    "dist/",
+    "skills/"
   ],
   "exports": {
     ".": {
