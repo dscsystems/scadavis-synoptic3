@@ -10,9 +10,11 @@
     "access": "public"
   },
   "sideEffects": true,
+  "customElements": "custom-elements.json",
   "files": [
     "dist/",
-    "skills/"
+    "skills/",
+    "custom-elements.json"
   ],
   "exports": {
     ".": {

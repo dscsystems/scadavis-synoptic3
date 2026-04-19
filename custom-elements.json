@@ -1,0 +1,437 @@
+{
+  "schemaVersion": "2.1.0",
+  "readme": "README.md",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "dist/scada-vis.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "SCADAvis Web Component for interactive SCADA diagrams and real-time visualization.",
+          "name": "ScadaVis",
+          "tagName": "scada-vis",
+          "customElement": true,
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "attributes": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "URL of the SVG file to load."
+            },
+            {
+              "name": "svgurl",
+              "type": {
+                "text": "string"
+              },
+              "description": "Alias for src attribute."
+            },
+            {
+              "name": "colorstable",
+              "type": {
+                "text": "string"
+              },
+              "description": "JSON string mapping color indices to color codes."
+            }
+          ],
+          "events": [
+            {
+              "name": "ready",
+              "type": {
+                "text": "ScadaVisReadyDetail"
+              },
+              "description": "Fired when the SVG is loaded and the component is ready for data."
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "ScadaVisErrorDetail"
+              },
+              "description": "Fired when an error occurs during loading or processing."
+            },
+            {
+              "name": "click",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Fired when a tagged element in the SVG is clicked."
+            },
+            {
+              "name": "zoomPan",
+              "type": {
+                "text": "ScadaVisZoomPanDetail"
+              },
+              "description": "Fired when a zoom or pan action occurs."
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "loadURL",
+              "parameters": [
+                {
+                  "name": "url",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              },
+              "description": "Loads an SVG file from the specified URL."
+            },
+            {
+              "kind": "method",
+              "name": "setSVG",
+              "parameters": [
+                {
+                  "name": "content",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              },
+              "description": "Sets the SVG content directly from a string."
+            },
+            {
+              "kind": "method",
+              "name": "setValue",
+              "parameters": [
+                {
+                  "name": "tag",
+                  "type": {
+                    "text": "string | number"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "number | boolean | string"
+                  }
+                },
+                {
+                  "name": "failed",
+                  "type": {
+                    "text": "boolean"
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "alarmed",
+                  "type": {
+                    "text": "boolean"
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "text": "string"
+                  },
+                  "optional": true
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Updates a single tag value and refreshes the display."
+            },
+            {
+              "kind": "method",
+              "name": "storeValue",
+              "parameters": [
+                {
+                  "name": "tag",
+                  "type": {
+                    "text": "string | number"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "number | boolean | string"
+                  }
+                },
+                {
+                  "name": "failed",
+                  "type": {
+                    "text": "boolean"
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "alarmed",
+                  "type": {
+                    "text": "boolean"
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "text": "string"
+                  },
+                  "optional": true
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Updates a single tag value without refreshing the display."
+            },
+            {
+              "kind": "method",
+              "name": "updateValues",
+              "parameters": [
+                {
+                  "name": "values",
+                  "type": {
+                    "text": "Record<string, number | boolean | string>"
+                  },
+                  "optional": true
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Refreshes the display with all stored values."
+            },
+            {
+              "kind": "method",
+              "name": "refreshDisplay",
+              "parameters": [
+                {
+                  "name": "values",
+                  "type": {
+                    "text": "Record<string, number | boolean | string>"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "Promise<boolean>"
+                }
+              },
+              "description": "Async version of updateValues that resolves when display refresh is complete."
+            },
+            {
+              "kind": "method",
+              "name": "getValue",
+              "parameters": [
+                {
+                  "name": "tag",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "any"
+                }
+              },
+              "description": "Returns the current value of a tag."
+            },
+            {
+              "kind": "method",
+              "name": "getTagsList",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "description": "Returns a list of all tags found in the SVG."
+            },
+            {
+              "kind": "method",
+              "name": "zoomTo",
+              "parameters": [
+                {
+                  "name": "level",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "target",
+                  "type": {
+                    "text": "string | {x: number, y: number}"
+                  },
+                  "optional": true
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Zooms to a specific level and target."
+            },
+            {
+              "kind": "method",
+              "name": "zoomToOriginal",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Resets the zoom to the original view."
+            },
+            {
+              "kind": "method",
+              "name": "enableTools",
+              "parameters": [
+                {
+                  "name": "options",
+                  "type": {
+                    "text": "ToolOptions"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Enables or disables toolbar tools (zoom, pan buttons)."
+            },
+            {
+              "kind": "method",
+              "name": "enableMouse",
+              "parameters": [
+                {
+                  "name": "options",
+                  "type": {
+                    "text": "MouseOptions"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Enables or disables mouse interactions."
+            },
+            {
+              "kind": "method",
+              "name": "enableAlarmFlash",
+              "parameters": [
+                {
+                  "name": "enabled",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Enables or disables alarm blinking."
+            },
+            {
+              "kind": "method",
+              "name": "setColor",
+              "parameters": [
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "code",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Sets a color in the color table."
+            },
+            {
+              "kind": "method",
+              "name": "setBackgroundColor",
+              "parameters": [
+                {
+                  "name": "color",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Sets the background color of the component."
+            },
+            {
+              "kind": "method",
+              "name": "setToolbarVisible",
+              "parameters": [
+                {
+                  "name": "show",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Shows or hides the toolbar."
+            }
+          ],
+          "exports": [
+            {
+              "kind": "js",
+              "name": "ScadaVis",
+              "declaration": {
+                "name": "ScadaVis",
+                "module": "dist/scada-vis.js"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/scada-vis.umd.cjs",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ScadaVis",
+          "declaration": {
+            "name": "ScadaVis",
+            "module": "dist/scada-vis.js"
+          }
+        }
+      ]
+    }
+  ]
+}
